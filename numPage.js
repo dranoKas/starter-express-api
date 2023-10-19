@@ -2,12 +2,12 @@ const express = require('express');
 const multer = require('multer');
 const mammoth = require('mammoth');
 const fs = require('fs');
-
+var cors =require("cors");
 const app = express();
 const port = process.env.PORT || 5000;
 
 app.use(express.json());
-
+app.use(cors());
 const storage = multer.memoryStorage();
 const upload = multer({ storage });
 
